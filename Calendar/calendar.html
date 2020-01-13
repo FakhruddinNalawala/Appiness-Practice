@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Fakhruddin's Profile">
+    <meta name="keywords" content="HTML, HTML5, CSS, CSS3, JavaScript, ES6, Fakhruddin, Calculator">
+    <meta name="author" content="Fakhruddin Nalawala @ Appiness Interactive">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="start date" content="09/01/2020">
+    <title>Responsive Calendar</title>
+
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Semantic UI -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.js"></script>
+
+</head>
+
+<body>
+    <header>
+
+        <!-- Select year and month -->
+        <div class="ui top borderless stackable inverted primary menu">
+            <form class="ui form item">
+                <div class="ui middle aligned stackable grid">
+                    <div class="row">
+
+                        <!-- Select Year -->
+                        <div class="six wide column">
+                            <div class="field">
+                                <input list="years" id="select-year" placeholder="Enter Year">
+                                <datalist name="years" id="years">
+                                    <option value="" selected>Year</option>     
+                                    <!-- <option value="2020">2020</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2023">2023</option>
+                                    <option value="2024">2024</option> -->
+                                </datalist>
+                            </div>
+                        </div>  
+
+                        <!-- Select Month -->
+                        <div class="six wide column">
+                            <div class="field">
+                                <select name="month" id="select-month" class="ui dropdown">
+                                    <option value="" selected="selected">Month</option>
+                                    <option value="1">January</option>
+                                    <option value="2">February</option>
+                                    <option value="3">March</option>
+                                    <option value="4">April</option>
+                                    <option value="5">May</option>
+                                    <option value="6">June</option>
+                                    <option value="7">July</option>
+                                    <option value="8">August</option>
+                                    <option value="9">September</option>
+                                    <option value="10">October</option>
+                                    <option value="11">November</option>
+                                    <option value="12">December</option>
+                                </select>
+                            </div>
+                        </div>  
+
+                        <div class="four wide column">
+                            <div class="ui button inverted green" onclick="fillDate()">Run?</div>
+                        </div>
+                        
+                    </div> 
+                </div>                 
+            </form>
+        </div>
+    </header>
+
+    <main>
+        <!-- Making a 7x6 table to hold week-wise days -->
+        <div class="ui center aligned grid" id="cal-box">
+            <div id="current" class="blank">.</div>
+            <!-- Header - week day names -->
+            <div class="row header-row" id="header-row">
+                <div class="two wide column week-num">Week Days:</div>
+                <div class="two wide column"></div>
+                <div class="two wide column"></div>
+                <div class="two wide column"></div>
+                <div class="two wide column"></div>
+                <div class="two wide column"></div>
+                <div class="two wide column"></div>
+                <div class="two wide column"></div>
+            </div>
+
+            <!-- week one -->
+            <div class="row">
+                <div class="two wide column week-num">Week One:</div>
+                <div class="two wide column dateSpace" data-row="0" data-column="0"></div>
+                <div class="two wide column dateSpace" data-row="0" data-column="1"></div>
+                <div class="two wide column dateSpace" data-row="0" data-column="2"></div>
+                <div class="two wide column dateSpace" data-row="0" data-column="3"></div>
+                <div class="two wide column dateSpace" data-row="0" data-column="4"></div>
+                <div class="two wide column dateSpace" data-row="0" data-column="5"></div>
+                <div class="two wide column dateSpace" data-row="0" data-column="6"></div>
+            </div>
+
+            <!-- week two -->
+            <div class="row">
+                <div class="two wide column week-num">Week Two:</div>
+                <div class="two wide column dateSpace" data-row="1" data-column="0"></div>
+                <div class="two wide column dateSpace" data-row="1" data-column="1"></div>
+                <div class="two wide column dateSpace" data-row="1" data-column="2"></div>
+                <div class="two wide column dateSpace" data-row="1" data-column="3"></div>
+                <div class="two wide column dateSpace" data-row="1" data-column="4"></div>
+                <div class="two wide column dateSpace" data-row="1" data-column="5"></div>
+                <div class="two wide column dateSpace" data-row="1" data-column="6"></div>
+            </div>
+
+            <!-- week three -->
+            <div class="row">
+                <div class="two wide column week-num">Week Three:</div>
+                <div class="two wide column dateSpace" data-row="2" data-column="0"></div>
+                <div class="two wide column dateSpace" data-row="2" data-column="1"></div>
+                <div class="two wide column dateSpace" data-row="2" data-column="2"></div>
+                <div class="two wide column dateSpace" data-row="2" data-column="3"></div>
+                <div class="two wide column dateSpace" data-row="2" data-column="4"></div>
+                <div class="two wide column dateSpace" data-row="2" data-column="5"></div>
+                <div class="two wide column dateSpace" data-row="2" data-column="6"></div>
+            </div>
+
+            <!-- week four -->
+            <div class="row">
+                <div class="two wide column week-num">Week Four:</div>
+                <div class="two wide column dateSpace" data-row="3" data-column="0"></div>
+                <div class="two wide column dateSpace" data-row="3" data-column="1"></div>
+                <div class="two wide column dateSpace" data-row="3" data-column="2"></div>
+                <div class="two wide column dateSpace" data-row="3" data-column="3"></div>
+                <div class="two wide column dateSpace" data-row="3" data-column="4"></div>
+                <div class="two wide column dateSpace" data-row="3" data-column="5"></div>
+                <div class="two wide column dateSpace" data-row="3" data-column="6"></div>
+            </div>
+
+            <!-- week five -->
+            <div class="row">
+                <div class="two wide column week-num">Week Five:</div>
+                <div class="two wide column dateSpace" data-row="4" data-column="0"></div>
+                <div class="two wide column dateSpace" data-row="4" data-column="1"></div>
+                <div class="two wide column dateSpace" data-row="4" data-column="2"></div>
+                <div class="two wide column dateSpace" data-row="4" data-column="3"></div>
+                <div class="two wide column dateSpace" data-row="4" data-column="4"></div>
+                <div class="two wide column dateSpace" data-row="4" data-column="5"></div>
+                <div class="two wide column dateSpace" data-row="4" data-column="6"></div>
+            </div>
+            <div class="blank">_</div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="ui center aligned inverted grid">
+            <div class="row">
+                <div class="eight wide column">
+                    <h1 class="ui header">Fakhruddin's Calendar</h1>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+    <script src="calendar.js"></script>
+</html>

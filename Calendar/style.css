@@ -1,0 +1,88 @@
+footer > .grid > .row > .column >.ui.header {
+    font-size: 2em !important;
+    color: white;
+}
+footer > .grid   {
+    background-color: black;
+    margin-bottom: 0em !important;
+    padding-bottom: 0em !important;
+}
+
+.blank {color:white !important;}
+
+option  {
+    color: black !important;
+    background-color: white !important;
+}
+
+.ui.grid    {
+    padding: 1.5em !important;
+}
+
+.column > .field   {width: 15em !important;}
+
+main > #cal-box > .row > .column  {
+    padding: 1em 0 1em 0em !important;
+    font-size: 3.75em;
+    border: 1px black solid !important;;
+}
+
+main > .grid > .row {
+    padding: 0px !important;
+}
+
+main    {
+    padding-left: 2.5em !important;
+    padding-right: 2.5em !important;
+}
+
+.week-num, .header-row>.column   {font-size: 1.5em !important;}
+.week-num   {text-align: left !important;}
+
+    .header-row :nth-child(3)::after    {content: "Monday";}
+    .header-row :nth-child(4)::after    {content: "Tuesday";}
+    .header-row :nth-child(5)::after    {content: "Wednesday";}
+    .header-row :nth-child(6)::after    {content: "Thursday";}
+    .header-row :nth-child(7)::after    {content: "Friday";}
+    .header-row :nth-child(8)::after    {content: "Saturday";}
+    .header-row :nth-child(2)::after    {content: "Sunday";}
+
+
+@media (max-width:1023px)   {
+    .header-row :nth-child(3)::after    {content: "Mon";}
+    .header-row :nth-child(4)::after    {content: "Tue";}
+    .header-row :nth-child(5)::after    {content: "Wed";}
+    .header-row :nth-child(6)::after    {content: "Thu";}
+    .header-row :nth-child(7)::after    {content: "Fri";}
+    .header-row :nth-child(8)::after    {content: "Sat";}
+    .header-row :nth-child(2)::after    {content: "Sun";}
+}
+
+@media (max-width:1000px)   {
+    .ui.header.huge, form {display: block !important;}
+}
+
+@media (max-width:850px)    {
+    .ui.header.huge {font-size: 2em !important;}
+    .dateSpace  {font-size: 2em !important;}
+}
+
+@media (max-width:767px)    {
+    main    {padding: 1em !important;}
+}
+
+@media (max-width: 550px)   {
+    .week-num   {display:none !important;}
+    main > .grid > .row > .column   {padding: 0.25em 0 0.25em 0 !important}
+    .dateSpace  {font-size: 1.75em !important;}
+}
+
+@media (max-width:450px)   {
+    .header-row :nth-child(3)::after    {content: "M";}
+    .header-row :nth-child(4)::after    {content: "T";}
+    .header-row :nth-child(5)::after    {content: "W";}
+    .header-row :nth-child(6)::after    {content: "T";}
+    .header-row :nth-child(7)::after    {content: "F";}
+    .header-row :nth-child(8)::after    {content: "S";}
+    .header-row :nth-child(2)::after    {content: "S";}
+}
