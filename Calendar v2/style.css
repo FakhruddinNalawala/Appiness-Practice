@@ -1,0 +1,103 @@
+footer > .grid > .row > .column >.ui.header {
+    font-size: 2em !important;
+    color: white;
+}
+footer > .grid   {
+    background-color: black;
+    margin-bottom: 0em !important;
+    padding-bottom: 0em !important;
+}
+
+/* Basic styling */
+body    {height: max-content !important;}
+.blank  {color:white !important;}
+option  {
+    color: black !important;
+    background-color: white !important;
+}
+.ui.grid    {padding: 1.5em !important;}
+.column > .field   {width: 15em !important;}
+#current    {
+    margin-top: 1em;
+    text-align: center;
+    width: 100%;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+table   {
+    table-layout: fixed ;
+    width: 100% ;
+    border-collapse: collapse;
+    border: 1px black solid !important;
+    margin: 3em 0em 4em 0em !important;
+}
+
+.header-row {
+    background-color: #eeeeee;
+    font-weight: bold;
+}
+
+td  {
+    padding: 1em 0 1em 0em !important;
+    border: 1px black solid;
+    font-size: 1.75em;
+    width: 12.5% ;
+    text-align: center !important;
+}
+
+tr {
+    padding: 0px !important;
+}
+
+main    {
+    padding-left: 2.5em !important;
+    padding-right: 2.5em !important;
+}
+
+.week-num, .header-row>.column   {font-size: 1.5em !important;}
+.week-num   {text-align: left !important;}
+
+
+/* Filling in Day Names */
+.header-row :nth-child(3)::after    {content: "Mon";}
+.header-row :nth-child(4)::after    {content: "Tue";}
+.header-row :nth-child(5)::after    {content: "Wed";}
+.header-row :nth-child(6)::after    {content: "Thu";}
+.header-row :nth-child(7)::after    {content: "Fri";}
+.header-row :nth-child(8)::after    {content: "Sat";}
+.header-row :nth-child(2)::after    {content: "Sun";}
+.header-row :nth-child(1)::after    {content: "";}
+
+
+/* For Responsiveness */
+@media (max-width:1000px)   {
+    .ui.header.huge, form {display: block !important;}
+}
+
+@media (max-width:850px)    {
+    .ui.header.huge {font-size: 2em !important;}
+    .dateSpace  {font-size: 2em !important;}
+}
+
+@media (max-width:767px)    {
+    main    {padding: 1em !important;}
+}
+
+@media (max-width: 550px)   {
+    .week-num   {display:none !important;}
+    main > .grid > .row > .column   {padding: 0.25em 0 0.25em 0 !important}
+    .dateSpace  {font-size: 1.75em !important;}
+    .week-holder,.week    {display: none;}
+}
+
+/* Shrink day names to fit in box */
+@media (max-width:450px)   {
+    .header-row :nth-child(3)::after    {content: "M";}
+    .header-row :nth-child(4)::after    {content: "T";}
+    .header-row :nth-child(5)::after    {content: "W";}
+    .header-row :nth-child(6)::after    {content: "T";}
+    .header-row :nth-child(7)::after    {content: "F";}
+    .header-row :nth-child(8)::after    {content: "S";}
+    .header-row :nth-child(2)::after    {content: "S";}
+}

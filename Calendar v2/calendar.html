@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Fakhruddin's Profile">
+    <meta name="keywords" content="HTML, HTML5, CSS, CSS3, JavaScript, ES6, Fakhruddin, Calculator">
+    <meta name="author" content="Fakhruddin Nalawala @ Appiness Interactive">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="start date" content="09/01/2020">
+    <title>Responsive Calendar</title>
+
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Semantic UI -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.js"></script>
+
+</head>
+
+<body>
+    <header>
+
+        <!-- Select year and month -->
+        <div class="ui top borderless stackable inverted primary menu">
+            <form class="ui form item">
+                <div class="ui middle aligned stackable grid">
+                    <div class="row">
+
+                        <!-- Select Year -->
+                        <div class="six wide column">
+                            <div class="field">
+                                <input list="years" id="select-year" placeholder="Enter Year">
+                                <datalist name="years" id="years">
+                                    <option value="" selected>Year</option>     
+                                    <!-- <option value="2020">2020</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2023">2023</option>
+                                    <option value="2024">2024</option> -->
+                                </datalist>
+                            </div>
+                        </div>  
+
+                        <!-- Select Month -->
+                        <div class="six wide column">
+                            <div class="field">
+                                <select name="month" id="select-month" class="ui dropdown">
+                                    <option value="" selected="selected">Month</option>
+                                    <option value="1">January</option>
+                                    <option value="2">February</option>
+                                    <option value="3">March</option>
+                                    <option value="4">April</option>
+                                    <option value="5">May</option>
+                                    <option value="6">June</option>
+                                    <option value="7">July</option>
+                                    <option value="8">August</option>
+                                    <option value="9">September</option>
+                                    <option value="10">October</option>
+                                    <option value="11">November</option>
+                                    <option value="12">December</option>
+                                </select>
+                            </div>
+                        </div>  
+
+                        <div class="four wide column">
+                            <div class="ui button inverted green" onclick="fillDate()">Run?</div>
+                        </div>
+                        
+                    </div> 
+                </div>                 
+            </form>
+        </div>
+    </header>
+
+    <main>
+        <div class="ui container">
+            <div id="current" class="blank"></div>
+
+            <!-- Table holding calendar -->
+            <table class="ui celled striped unstackable table">
+                <tbody>
+
+                    <!-- Days of the week -->
+                    <tr class="header-row">
+                        <td class="week"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <!-- Week 1 -->
+                    <tr id="_0"></tr>
+
+                    <!-- Week 2 -->
+                    <tr id="_1"></tr>
+
+                    <!-- Week 3 -->
+                    <tr id="_2"></tr>
+
+                    <!-- Week 4 -->
+                    <tr id="_3"></tr>
+
+                    <!-- Week 5 -->
+                    <tr id="_4"></tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <div class="ui center aligned inverted grid">
+            <div class="row">
+                <div class="eight wide column">
+                    <h1 class="ui header">Fakhruddin's Calendar</h1>
+                </div>
+            </div>
+
+
+            <!-- Add event to the calendar -->
+            <!-- <button onclick="eventAdd()" id="event-button">Add Event</button>
+
+            <form class="ui form" style="display: none !important;" id="event-adder">
+                <input type="text" name="" id="event-data">
+                <input type="date">
+                <input type="submit" onclick="eventAdd()">
+            </form> -->
+
+        </div>
+    </footer>
+</body>
+    <script src="calendar.js"></script>
+</html>
