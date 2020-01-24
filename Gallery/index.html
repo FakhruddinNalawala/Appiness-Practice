@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Fakhruddin's Profile">
+    <meta name="keywords" content="HTML, HTML5, CSS, CSS3, JavaScript, ES6, Fakhruddin, Calculator">
+    <meta name="author" content="Fakhruddin Nalawala @ Appiness Interactive">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="start date" content="16/01/2020">
+    <title>Gallery via Firebase</title>
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-storage.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Semantic UI -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <div class="ui fixed massive menu red inverted" id="top-menu">
+            <p class="item">Gallery</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="ui fluid container">
+            <div class="ui stackable centered grid">
+                <div class="ui divider"></div>
+
+                <!-- Add Image -->
+                <div class="row">
+                    <div class="seven wide center aligned column">
+                        <div class="box">
+                            <button class="ui button" id="form-reveal" onclick="reveal()"><i class="plus icon"></i>Add Image</button>
+                            <div class="ui form" id="upload-form">
+                                <div class="field"><input type="file" accept="image/*" value="upload" name="file-upload" onchange="loadFile(event)" id="file-upload"></div>
+                                <div class="field"><progress value="0" max="100" id="uploader">0%</progress></div>
+                                <div class="fields">
+                                    <div class="field"><button class="ui button" onclick="cancelUpload()">Cancel</button></div>
+                                    <div class="field"><button class="ui button" onclick="upload()">Upload</button></div>
+                                </div>
+                            </div>
+                            <!-- <div class="ui fluid message" id="done-message">
+                                <i class="close icon"></i>
+                                <p>Upload Successful</p>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="nine wide center aligned column" id="image-confirm">
+                        <img src="" alt="" id="output">
+                    </div>   
+                </div>
+
+                <div class="ui divider"></div>
+
+                <!-- View Image -->
+                <div class="row">
+                    <div class="sixteen wide center aligned centered column" id="images">
+                        <div class="ui fluid grid">
+                            <div class="center aligned column" id="message-success"></div>
+                        </div>
+                        <div class="ui stackable centered grid" id="directory">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ui divider"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="ui menu inverted red">
+        <h4 class="ui header item">Made by Fakhruddin Nalawala</h4>
+    </footer>
+    
+    <script src="gallery2.js"></script>
+</body>
+</html>

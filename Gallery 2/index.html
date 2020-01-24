@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Fakhruddin's Profile">
+    <meta name="keywords" content="HTML, HTML5, CSS, CSS3, JavaScript, ES6, Fakhruddin, Calculator">
+    <meta name="author" content="Fakhruddin Nalawala @ Appiness Interactive">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="start date" content="16/01/2020">
+    <title>Gallery via Firebase</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Semantic UI -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.css" />
+
+    <style>
+        .snowflake {
+            width: 500px;
+            margin: 100px;
+            border: 1px solid;
+        }
+
+        .snowflake img {
+            width: 100%;
+            border: 1px solid blue;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <div class="ui fixed menu blue inverted" id="top-menu">
+            <p class="item">Gallery</p>
+        </div>
+    </header>
+
+    <main>
+
+        <div id='cover'></div>
+        <div id='image-viewer'>
+            <div id='image-box'></div>
+        </div>
+
+        <!-- Upload form to add image -->
+        <div id='upload-form-box'>
+            <div class="ui form" id="upload-form">
+                <div class="field"><input type="file" accept="image/*" value="upload" name="file-upload"
+                        onchange="loadFile(event)" id="file-upload"></div>
+                <div class="field"><progress value="0" max="100" id="uploader">0%</progress></div>
+                <div class="fields">
+                    <div class="field"><button class="ui button" onclick="cancelUpload()">Cancel</button></div>
+                    <div class="field"><button class="ui button" onclick="upload()">Upload</button></div>
+                </div>
+            </div>
+            <img src="" alt="" id='output'>
+        </div>
+
+        <div class="ui fluid container" id='main-contents'>
+            <div class="ui stackable centered grid">
+
+                <!-- Add Image Button -->
+                <div class="row">
+                    <div class="column">
+                        <button class="ui basic blue labeled icon button" onclick="openForm()" id='add-item'>
+                            <i class="add icon"></i>
+                            Add image
+                        </button>
+                    </div>
+                </div>
+
+                <!-- View Image -->
+                <div class="centered row">
+                    <div class="ui active inverted dimmer" id='loads'>
+                        <div class="ui text loader">Loading</div>
+                    </div>
+
+                    <div class="five wide center aligned column" id='directory-1'>
+
+                    </div>
+                    <div class="five wide center aligned column" id='directory-2'>
+
+                    </div>
+                    <div class="five wide center aligned column" id='directory-3'>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="ui bottom fixed menu blue inverted" id="bottom-menu">
+            <p class="item">Made By Fakhruddin</p>
+        </div>
+    </footer>
+
+    <!-- Semantic UI JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.js"></script>
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-storage.js"></script>
+
+    <!-- Local JS -->
+    <script src="main.js"></script>
+
+</body>
+
+</html>

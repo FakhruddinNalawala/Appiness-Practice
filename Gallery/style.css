@@ -1,0 +1,82 @@
+main    {padding-top: 5em !important;}
+
+.box    {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+}
+
+.field, .field > .ui.button {
+    width: 100%;
+    margin-bottom: 0.25em !important;
+}
+
+#image-confirm  {
+    max-height: 250px;
+    overflow: hidden;
+}
+
+#output {
+    position: absolute;
+    width: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#upload-form, #form-reveal    {
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0em !important;
+}
+
+#upload-form    {height: 80%;}
+
+#add-image-icon {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.box p  {
+    position: relative;
+    top: 50%;
+    transform: translateY(-275%);
+    color: #0038a8;
+    text-align: center;
+}
+
+.message    {height: 100%;}
+
+progress    {
+    height: 2em;
+    width: 80%;
+}
+
+.image-downloader   {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+button > p  {
+    text-align: center;
+    height: 100%;
+}
+
+.close.icon     {float: right;}
+.close.icon:hover   {color: blue;}
+
+.ui.grid    {margin-top: 2em !important;}
+
+footer  {margin-bottom: 0 !important;}
+
+#upload-form, #done-message {display: none;}
+
+button:hover    {color:white !important;}
+
+#directory  {margin : 0.25em !important; padding: 0.25em !important;}
